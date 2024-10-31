@@ -1,0 +1,19 @@
+cd UrbanDjango
+py manage.py shell
+from task1.models import Buyer
+Buyer.objects.all()
+Buyer.objects.create(name='Ilya', balance=1500.05, age=24)
+Buyer.objects.create(name='Terminator2000', balance=42.15, age=52)
+Buyer.objects.create(name='Ubivator432', balance=0.5, age=16)
+from task1.models import Game
+Game.objects.create(title='Cyberpunk 2077', cost=31, size=46.2, description='Game of the year', age_limited=True)
+Game.objects.create(title='Mario', cost=5, size=0.5, description='Old Game')
+Game.objects.create(title='Hitman', cost=12, size=36.6, description='Who kills Mark?', age_limited=True)
+Buyer.objects.count()
+Game.objects.count()
+buyer_1=Buyer.objects.get(id=1)
+buyer_2=Buyer.objects.get(id=2)
+buyer_3=Buyer.objects.get(id=3)
+Game.objects.get(id=1).buyer.set((buyer_1, buyer_2))
+Game.objects.get(id=2).buyer.set((buyer_2, buyer_3))
+Game.objects.get(id=3).buyer.set((buyer_1, buyer_2))
