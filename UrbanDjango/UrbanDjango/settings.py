@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'UrbanDjango',
-    'task1'
+    'task1',
+    'task2'
 ]
 
 MIDDLEWARE = [
